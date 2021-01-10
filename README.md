@@ -60,3 +60,71 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+# Kohinoor
+ A Laravel Project of Reservation, Booking and Invoice Management
+
+1. Download install XAMPP with latest PHP version above 7.4
+2. Download and install Composer
+   Open Command Prompt
+3. Download and install latest Node.js
+   
+4. Run following commands
+   npm install -g npm@latest
+   composer global require laravel/installer
+
+   composer create-project laravel/laravel Kohinoor
+   cd Kohinoor
+   composer require laravel/jetstream
+   php artisan jetstream:install livewire OR php artisan jetstream:install inertia
+Goto config/jetstream.php
+  uncomment feature  Features::profilePhotos(), 
+   php artisan storage:link
+
+add db connection and base url in .env file in root folder
+   php artisan migrate
+   npm install
+   npm dev run
+   php artisan serve
+
+   
+
+
+Configuring project downloaded from GitHub
+$ composer update
+$ php artisan migrate
+$ php artisan storage:link
+
+1. Create copy of .env.example with name .env
+ This is your environment file which is required by laravel project
+2. Open .env file and update this file with your MySQL Connection credentilas
+3. After that run following command
+
+php artisan key:generate
+php artisan config:cache
+composer dump-autoload
+
+4. After that run your migration commands
+
+php artisan migrate
+
+5. Now Run your project with following command
+
+php artisan serve --host 0.0.0.0 --port 8000
+   
+   
+   
+   
+
+
+
+Tutorial: https://www.youtube.com/watch?v=dYCek6yOBwo&list=PLWCLxMult9xeJEntBQFZfOxUzDvkuq6uM&index=3&ab_channel=ProgrammingwithVishal
+Auth Project: https://laravelarticle.com/laravel-8-authentication-tutorial
+Some Useful Commands:
+php artisan make:controller User
+npm cache clean --force
+npm install
+npm run dev
+php artisan make:auth
