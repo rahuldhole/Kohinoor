@@ -21,12 +21,28 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('book', \App\Http\Controllers\BookController::class);
-
 Route::group(['middleware'=>'auth'], function(){
     Route::resource('book', \App\Http\Controllers\BookController::class);
 });
 
-Route::get('admin', function (){
-    return view('admindash');
+Route::get('admin',function (){
+    if(session()->has('kpsess')) {
+        return redirect('mydash');
+    }
 });
+
+Route::get('mydash',function (){
+    if(!session()->has('kpsess')) {
+        session()->flash('error', 'Access Denied!!! Please Login!!!');
+        return redirect('admin');
+    } else return view('admin_dash');
+});
+
+
+Route::post('adminlogin', [\App\Http\Controllers\AdminLog::class, 'login']);
+Route::get('adminlogout', function (){
+    session()->forget('kpsess');
+    session()->flash('error', 'Logout successfully!!!');
+    return view('admin_login');
+});
+

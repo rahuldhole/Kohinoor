@@ -91,6 +91,8 @@ add route resource Book controller
 Add AdminLTE template https://www.youtube.com/watch?v=r3OnX700Pi8&ab_channel=EstebanDelgadoInc
 
 
+$php artisan make:controller AdminLog --resource
+created login and session in it
 
 
 
