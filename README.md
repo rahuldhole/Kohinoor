@@ -85,6 +85,7 @@ Goto config/jetstream.php
 
 add db connection and base url in .env file in root folder
    php artisan migrate
+   php artisan vendor:publish --tag=jetstream-views
    npm install
    npm dev run
    php artisan serve
