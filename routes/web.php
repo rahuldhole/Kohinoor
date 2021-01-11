@@ -21,4 +21,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::view('reserve', 'reserve');
+Route::resource('book', \App\Http\Controllers\BookController::class);
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::resource('book', \App\Http\Controllers\BookController::class);
+});
+
+Route::get('admin', function (){
+    return view('admindash');
+});

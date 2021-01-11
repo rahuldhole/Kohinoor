@@ -83,6 +83,20 @@ Goto config/jetstream.php
   uncomment feature  Features::profilePhotos(), 
    php artisan storage:link
 
+
+Process:
+Added Navigation Link for Booking Book
+$php artisan make:controller BookController --resource
+add route resource Book controller
+Add AdminLTE template https://www.youtube.com/watch?v=r3OnX700Pi8&ab_channel=EstebanDelgadoInc
+
+
+
+
+
+
+
+
 add db connection and base url in .env file in root folder
    php artisan migrate
    php artisan vendor:publish --tag=jetstream-views
@@ -114,6 +128,10 @@ php artisan migrate
 5. Now Run your project with following command
 
 php artisan serve --host 0.0.0.0 --port 8000
+
+
+
+
    
    
    
@@ -129,3 +147,6 @@ npm cache clean --force
 npm install
 npm run dev
 php artisan make:auth
+
+
+Got landing page from Itch.io

@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <!-- <x-jet-authentication-card-logo />-->
+            <a href="/"><img src = "/svg/gem.svg" alt="" style = "visibility: visible; height: 7em; padding-bottom:-7em;"></a>
         </x-slot>
 
         <div x-data="{ recovery: false }">
