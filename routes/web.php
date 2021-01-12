@@ -28,13 +28,13 @@ Route::group(['middleware'=>'auth'], function(){
 Route::get('admin',function (){
     if(session()->has('kpsess')) {
         return redirect('mydash');
-    }
+    } else  return view('admin_login');
 });
 
 Route::get('mydash',function (){
     if(!session()->has('kpsess')) {
         session()->flash('error', 'Access Denied!!! Please Login!!!');
-        return redirect('admin');
+        return view('admin_login');
     } else return view('admin_dash');
 });
 
