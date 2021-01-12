@@ -90,6 +90,24 @@ $php artisan make:controller BookController --resource
 add route resource Book controller
 Add AdminLTE template https://www.youtube.com/watch?v=r3OnX700Pi8&ab_channel=EstebanDelgadoInc
 
+Create a new Database Table for CRUD
+$php artisan make:migration billing_details_table
+$php artisan make:migration consoles_table
+$php artisan make:migration games_table
+$php artisan make:migration create_reservation_table
+
+if wanna Rollback last five table migration $php artisan migrate:rollback --step=5
+check status of tables rollbacked/migrated
+$php artisan migrate:status
+
+
+add columns
+$php artisan migrate --path=/database/migrations/2020_04_10_130703_create_reservation_table.php
+
+
+
+
+
 
 $php artisan make:controller AdminLog --resource
 created login and session in it
