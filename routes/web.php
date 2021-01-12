@@ -27,22 +27,28 @@ Route::group(['middleware'=>'auth'], function(){
 
 Route::get('admin',function (){
     if(session()->has('kpsess')) {
-        return redirect('mydash');
-    } else  return view('admin_login');
+        return view('admin.admin_dash');
+    } else  return view('admin.admin_login');
 });
 
 Route::get('mydash',function (){
     if(!session()->has('kpsess')) {
         session()->flash('error', 'Access Denied!!! Please Login!!!');
-        return view('admin_login');
-    } else return view('admin_dash');
+        return view('admin.admin_login');
+    } else return view('admin.admin_dash');
 });
 
+Route::get('users',function (){
+    if(!session()->has('kpsess')) {
+        session()->flash('error', 'Access Denied!!! Please Login!!!');
+        return view('admin.admin_login');
+    } else return view('admin.users');
+});
 
 Route::post('adminlogin', [\App\Http\Controllers\AdminLog::class, 'login']);
 Route::get('adminlogout', function (){
     session()->forget('kpsess');
     session()->flash('error', 'Logout successfully!!!');
-    return view('admin_login');
+    return view('admin.admin_login');
 });
 

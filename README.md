@@ -82,6 +82,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Goto config/jetstream.php
   uncomment feature  Features::profilePhotos(), 
    php artisan storage:link
+   @if (Auth::check())
+   Hi
+   @else
+   Bye
+   @endif
 
 
 Process:
@@ -105,12 +110,40 @@ add columns
 $php artisan migrate --path=/database/migrations/2020_04_10_130703_create_reservation_table.php
 
 
-
-
-
-
 $php artisan make:controller AdminLog --resource
 created login and session in it
+
+call STATIC FUNCTIONS of controller from view
+@php
+echo App\Http\Controllers\AdminLogController::viewcalling();
+@endphp
+
+
+$php artisan make:controller AdminController --resource
+$php artisan make:controller UserController --resource
+$php artisan make:controller ReservationController --resource
+
+use Illuminate\Support\Facades\DB; in controller for Query Builder
+
+$someVariable = Input::get("some_variable");
+
+$results = DB::select( DB::raw("SELECT * FROM some_table WHERE some_col = '$someVariable'") );
+DB::statement( 'ALTER TABLE HS_Request AUTO_INCREMENT=9999' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
