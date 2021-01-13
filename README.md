@@ -214,3 +214,5 @@ When Online Upload: Don't forgot to change APP URL in config/app.php and in env
 
 Solved Issues:
 Jetstream Profile photo is 404 not found
+Goto config/filesystem.php and take a zugzwang path
+'root' => storage_path('/../public/storage'),
