@@ -34,7 +34,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="mydash" class="logo">
+        <a href="admin" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b></b>K</b>P</span>
             <!-- logo for regular state and mobile devices -->

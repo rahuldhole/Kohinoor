@@ -50,7 +50,7 @@
     @endif
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            <img class= "pGem" src = "/svg/gem.svg" alt="" style = "height: 7em">
+            <a href="/"><img class= "pGem" src = "/svg/gem.svg" alt="" style = "height: 7em"></a>
             <div style="font-family: 'Permanent Marker', cursive; font-size:3.5em"> Kohinoor Club</div>
         </div>
         <div style="margin-left:7em; margin-top:-2em"> A Gaming club. We have latest gaming consoles like PS5 XBox Bigben QL5 with capacity of 20+ players.</div>

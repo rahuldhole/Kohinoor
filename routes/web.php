@@ -58,5 +58,28 @@ Route::get('allusers',function (){
         return "Bye! Bye!";
     } else return view('admin_layout.widgets.users_datatable_widget');
 });
+Route::get('reservations',function (){
+    if(!session()->has('kpsess')) {
+        //session()->flash('error', 'Access Denied!!! Please Login!!!');
+        return "Bye! Bye!";
+    } else return view('admin.reservations');
+});
+
+Route::get('allreservations',function (){
+    if(!session()->has('kpsess')) {
+        //session()->flash('error', 'Access Denied!!! Please Login!!!');
+        return "Bye! Bye!";
+    } else return view('admin_layout.widgets.reservations_datatable_widget');
+});
 
 Route::view('game', 'game');
+Route::post('newBooking', [\App\Http\Controllers\BookController::class, 'store']);
+
+Route::view('mybookings','modules.mybookings');
+
+
+
+Route::get('myres', [\App\Http\Controllers\BookController::class, 'showmy']);
+
+
+Route::get('/res_update/{id}/{new_status}', [\App\Http\Controllers\ReservationController::class, 'update']);

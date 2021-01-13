@@ -85,8 +85,8 @@
                         <h1 class="web_text"><strong>Kohinoor Gaming Parlour</strong></h1>
                         <p class="donec_text">A Gaming club. We have latest gaming consoles like PS5 XBox Bigben QL5 with capacity of 20+ players.
 </p>
-                         <a class="get_bg" href="register" role="button">Bookings</a>
-                         <a class="btn btn-lg btn-dark" href="game" role="button">Play A Simple GAME</a>
+                         <a class="get_bg" href="game" role="button">Play A Simple GAME</a>
+                         <a class="btn btn-lg btn-dark" href="register" role="button">Bookings</a>
                     </div>
                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                  <div class="img-box">

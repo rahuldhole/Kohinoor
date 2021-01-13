@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class ReservationController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('bookings');
+        //
     }
 
     /**
@@ -66,9 +68,22 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, $new_status)
     {
-        //
+        if($new_status == 1)
+            $msg = "Approved!";
+        else $msg = "Rejected!";
+
+        DB::table('reservation')
+            ->where('id', $id)
+            ->update(
+                ['status' => $new_status],
+                ['updated_at' => now()]
+            );
+
+        session()->flash('msg', $msg);
+
+        return redirect('allreservations');
     }
 
     /**

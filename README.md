@@ -130,7 +130,8 @@ $someVariable = Input::get("some_variable");
 $results = DB::select( DB::raw("SELECT * FROM some_table WHERE some_col = '$someVariable'") );
 DB::statement( 'ALTER TABLE HS_Request AUTO_INCREMENT=9999' );
 
-
+current logged in user info  
+$user = auth()->user(); var_dump($user->name);
 
 
 

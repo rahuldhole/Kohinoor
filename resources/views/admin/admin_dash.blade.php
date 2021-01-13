@@ -18,5 +18,9 @@
         <div class="col-md-6">
             @include('admin_layout.widgets.users_widget')
         </div>
+        <div class="col-md-4">
+            @include('admin_layout.widgets.list_widget')
+        </div>
     </div>
+
 @endsection

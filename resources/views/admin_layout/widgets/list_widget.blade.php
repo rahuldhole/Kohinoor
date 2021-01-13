@@ -1,7 +1,10 @@
-
+@php
+    $bookings = App\Http\Controllers\BookController::showNew();
+//echo $bookings;
+@endphp
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Recently Added Products</h3>
+                <h3 class="box-title">New Reservations</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -12,62 +15,38 @@
             <!-- /.box-header -->
             <div class="box-body">
                 <ul class="products-list product-list-in-box">
+
+                    @foreach($bookings as $book)
+                        @php
+                            if($book->profile_photo_path == NULL)
+                                $prof_photo = "/dist/img/avatar.jpg";
+                            else
+                                $prof_photo = "/storage/".$book->profile_photo_path;
+                        @endphp
+
+
+
                     <li class="item">
                         <div class="product-img">
-                            <img src="dist/img/default-50x50.gif" alt="Product Image">
+                            <img src="{{$prof_photo}}" alt="Product Image">
                         </div>
                         <div class="product-info">
-                            <a href="javascript:void(0)" class="product-title">Samsung TV
-                                <span class="label label-warning pull-right">$1800</span></a>
+                            <a href="javascript:void(0)" class="product-title">{{$book->name}}</a>
                             <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                <strong>{{$book->on_date}}</strong> | {{$book->start_time}} to {{$book->end_time}}
                         </span>
                         </div>
                     </li>
                     <!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-50x50.gif" alt="Product Image">
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript:void(0)" class="product-title">Bicycle
-                                <span class="label label-info pull-right">$700</span></a>
-                            <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
-                        </div>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-50x50.gif" alt="Product Image">
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                            <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                        </div>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="dist/img/default-50x50.gif" alt="Product Image">
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                <span class="label label-success pull-right">$399</span></a>
-                            <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                        </div>
-                    </li>
-                    <!-- /.item -->
+
+
+                    @endforeach
+
                 </ul>
             </div>
             <!-- /.box-body -->
             <div class="box-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                <a href="reservations" class="uppercase">View All Reservations</a>
             </div>
             <!-- /.box-footer -->
         </div>

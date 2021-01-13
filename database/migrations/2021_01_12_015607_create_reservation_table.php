@@ -20,7 +20,7 @@ class CreateReservationTable extends Migration
             $table->integer('chairs');
             $table->string('start_time');
             $table->string('end_time');
-            $table->date('date');
+            $table->date('on_date');
             $table->string('user_notes');
             $table->string('admin_notes');
             $table->float('bill', 8, 2);
