@@ -44,12 +44,34 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public static function show($id)
+    public static function show()
     {
         $users = DB::table('users')
             ->orderBy('created_at', 'desc')
             ->limit(8)
             ->get();
+        return  $users;
+    }
+    public static function showAll()
+    {
+        $users = DB::table('users')
+            ->orderBy('name', 'asc')
+            ->get();
+        return  $users;
+    }
+
+    public static function newUsers()
+    {
+        $users = DB::table('users')
+            ->whereRaw('created_at BETWEEN SUBDATE(CURDATE(), 1) AND CURDATE()')
+            ->count();
+        return  $users;
+    }
+
+    public static function totalUsers()
+    {
+        $users = DB::table('users')
+            ->count();
         return  $users;
     }
 

@@ -52,3 +52,11 @@ Route::get('adminlogout', function (){
     return view('admin.admin_login');
 });
 
+Route::get('allusers',function (){
+    if(!session()->has('kpsess')) {
+        //session()->flash('error', 'Access Denied!!! Please Login!!!');
+        return "Bye! Bye!";
+    } else return view('admin_layout.widgets.users_datatable_widget');
+});
+
+Route::view('game', 'game');

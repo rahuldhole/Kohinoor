@@ -1,9 +1,15 @@
+@php
+    $users = App\Http\Controllers\UserController::show();
+    $newUsers = App\Http\Controllers\UserController::newUsers();
+    $totalUsers = App\Http\Controllers\UserController::totalUsers();
+@endphp
+
 <div class="box box-danger">
     <div class="box-header with-border">
         <h3 class="box-title">Latest Members</h3>
 
         <div class="box-tools pull-right">
-            <span class="label label-danger">8 New Members</span>
+            <span class="label label-danger">{{$newUsers}} New Members</span>
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
@@ -13,10 +19,6 @@
     <!-- /.box-header -->
     <div class="box-body no-padding">
         <ul class="users-list clearfix">
-
-    @php
-        $users = App\Http\Controllers\UserController::show(1);
-    @endphp
     @foreach($users as $card)
         <li>
             @php
@@ -35,7 +37,7 @@
     </div>
     <!-- /.box-body -->
     <div class="box-footer text-center">
-        <a href="/users" class="uppercase">View All Users</a>
+        <a href="/users" class="uppercase">View All Users ({{$totalUsers}})</a>
     </div>
     <!-- /.box-footer -->
 </div>
