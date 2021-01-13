@@ -65,6 +65,7 @@
                                  <li><a href="#service">Service</a></li>
                                  <li><a href="#contact">Contact Us</a></li>
                                  <li><a href="login">Login</a></li>
+                                 <li><a href="register">Register</a></li>
                               </ul>
                            </nav>
                         </div>

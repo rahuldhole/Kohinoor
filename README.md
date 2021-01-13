@@ -155,7 +155,7 @@ add db connection and base url in .env file in root folder
    php artisan migrate
    php artisan vendor:publish --tag=jetstream-views
    npm install
-   npm dev run
+   npm run dev
    php artisan serve
 
    
@@ -186,10 +186,10 @@ php artisan serve --host 0.0.0.0 --port 8000
 
 
 
-   
-   
-   
-   
+
+
+
+
 
 
 
@@ -204,3 +204,13 @@ php artisan make:auth
 
 
 Got landing page from Itch.io
+
+
+
+
+
+When Online Upload: Don't forgot to change APP URL in config/app.php and in env
+
+
+Solved Issues:
+Jetstream Profile photo is 404 not found

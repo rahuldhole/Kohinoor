@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-12">
             <!--include('admin_layout.widgets.users_datatable_widget')-->
-            <iframe frameborder="0" height = "700" style="overflow:scroll; width: 100%" src="{{url('allreservations')}}" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            <iframe frameborder="0" height = "700" style="overflow:scroll; width: 100%" src="{{url('allreservations')}}" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="" frameborder="0" allowtransparency="true"></iframe>
         </div>
     </div>
 @endsection
