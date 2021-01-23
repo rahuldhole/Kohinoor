@@ -68,28 +68,29 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 1. Download install XAMPP with latest PHP version above 7.4
 2. Download and install Composer
-   Open Command Prompt
 3. Download and install latest Node.js
    
-4. Run following commands
-   npm install -g npm@latest
-   composer global require laravel/installer
+4. Open Command Prompt Run following commands
+   $npm install -g npm@latest
+   $composer global require laravel/installer
 
-   composer create-project laravel/laravel Kohinoor
-   cd Kohinoor
-   composer require laravel/jetstream
-   php artisan jetstream:install livewire OR php artisan jetstream:install inertia
-Goto config/jetstream.php
+   $composer create-project laravel/laravel Kohinoor
+   $cd Kohinoor
+   $composer require laravel/jetstream
+   $php artisan jetstream:install livewire
+5. Open Kohinoor/config/jetstream.php
   uncomment feature  Features::profilePhotos(), 
-   php artisan storage:link
+   
+6. Go back to command prompt and run 
+   $php artisan storage:link
+
+
+Process:
    @if (Auth::check())
    Hi
    @else
    Bye
    @endif
-
-
-Process:
 Added Navigation Link for Booking Book
 $php artisan make:controller BookController --resource
 add route resource Book controller
